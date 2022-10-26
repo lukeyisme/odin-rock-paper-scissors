@@ -2,7 +2,10 @@ let compNum;
 let compChoice;
 let userChoice;
 
-userChoice = prompt("Choose rock, paper, or scissors:");
+function game(){
+    for(let i = 0; i < 5; i++)
+    playRound()
+}
 
 function getComputerChoice(){
     compNum = Math.random();
@@ -22,7 +25,8 @@ function getComputerChoice(){
     return compChoice;
 };
 
-function playRound(userChoice){
+function playRound(){
+    userChoice = prompt("Choose rock, paper, or scissors:");
     getComputerChoice();
 
     if(compChoice == 'rock' && userChoice.toLowerCase() == 'scissors'){
@@ -47,5 +51,9 @@ function playRound(userChoice){
 
     else if(compChoice == 'scissors' && userChoice.toLowerCase() == 'rock'){
         console.log("Rock beats scissors, you win!")
+    }
+
+    else if(compChoice == userChoice.toLowerCase()){
+        console.log("Draw! Try Again")
     }
 };
