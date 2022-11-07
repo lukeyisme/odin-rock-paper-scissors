@@ -10,6 +10,8 @@ header{
     font-size: 72px;
     background-color: rgba(84, 120, 197, 0.575);
     margin: 5%;
+    padding: 1%;
+    border-radius: 12px;
 }
 
 div{
@@ -21,4 +23,6 @@ div{
     font-size: 24px;
     background-color: darkslategray;
     margin: 5%;
+    padding: 1%;
+    border-radius: 12px;
 }
