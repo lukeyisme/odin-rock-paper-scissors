@@ -9,6 +9,8 @@ function game(){
     compScore = 0;
     
     for(let i = 0; i < 5; i++){
+        userChoice = prompt("Choose rock, paper, or scissors:");
+        getComputerChoice()
         playRound()
     }
 
@@ -42,9 +44,9 @@ function getComputerChoice(){
     return compChoice;
 };
 
-function playRound(){
-    userChoice = prompt("Choose rock, paper, or scissors:");
-    getComputerChoice();
+function playRound(userChoice, compChoice){
+    //userChoice = prompt("Choose rock, paper, or scissors:");
+    //getComputerChoice();
 
     if(compChoice == 'rock' && userChoice.toLowerCase() == 'scissors'){
         console.log("Sorry, rock beats scissors!")
