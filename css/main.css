@@ -14,7 +14,7 @@ header{
     border-radius: 12px;
 }
 
-div{
+.textContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,4 +25,23 @@ div{
     margin: 5%;
     padding: 1%;
     border-radius: 12px;
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn{
+    padding: 1%;
+    font-size: 24px;
+    border-radius: 12px;
+}
+
+#rockBtn{
+    background-color: rgb(59, 58, 58);
+}
+
+#scissorsBtn{
+    background-color: rgb(142, 143, 145);
 }
