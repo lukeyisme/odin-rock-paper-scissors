@@ -30,12 +30,19 @@ header{
 .btnContainer{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    padding: 1%;
 }
 
 .btn{
     padding: 1%;
     font-size: 24px;
     border-radius: 12px;
+    text-align: center;
+}
+
+#playGameBtn{
+    background-color: rgb(109, 3, 185);
 }
 
 #rockBtn{

@@ -4,6 +4,9 @@ let userChoice;
 let compScore;
 let userScore;
 
+const playGame = document.getElementById("playGameBtn");
+playGame.addEventListener('click', game);
+
 function game(){
     userScore = 0;
     compScore = 0;
