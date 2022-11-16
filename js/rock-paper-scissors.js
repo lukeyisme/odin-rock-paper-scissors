@@ -4,10 +4,7 @@ let userChoice;
 let compScore;
 let userScore;
 
-const playGame = document.getElementById("playGameBtn");
-playGame.addEventListener('click', game);
-
-function game(){
+const game = () => {
     userScore = 0;
     compScore = 0;
     
@@ -48,40 +45,44 @@ function getComputerChoice(){
 };
 
 function playRound(userChoice, compChoice){
-    //userChoice = prompt("Choose rock, paper, or scissors:");
-    //getComputerChoice();
+    // getComputerChoice();
 
-    if(compChoice == 'rock' && userChoice.toLowerCase() == 'scissors'){
+    if(compChoice == 'rock' && userChoice == 'scissors'){
         console.log("Sorry, rock beats scissors!")
         compScore++;
     }
 
-    else if(compChoice == 'rock' && userChoice.toLowerCase() == 'paper'){
+    else if(compChoice == 'rock' && userChoice == 'paper'){
         console.log("Paper covers rock, you win!")
         userScore++;
     }
 
-    else if(compChoice == 'paper' && userChoice.toLowerCase() == 'rock'){
+    else if(compChoice == 'paper' && userChoice == 'rock'){
         console.log("Sorry, paper covers rock!")
         compScore++;
     }
 
-    else if(compChoice == 'paper' && userChoice.toLowerCase() == 'scissors'){
+    else if(compChoice == 'paper' && userChoice == 'scissors'){
         console.log("Scissors cut paper, you win!")
         userScore++;
     }
 
-    else if(compChoice == 'scissors' && userChoice.toLowerCase() == 'paper'){
+    else if(compChoice == 'scissors' && userChoice == 'paper'){
         console.log("Sorry, scissors cut paper!")
         compScore++;
     }
 
-    else if(compChoice == 'scissors' && userChoice.toLowerCase() == 'rock'){
+    else if(compChoice == 'scissors' && userChoice == 'rock'){
         console.log("Rock beats scissors, you win!")
         userScore++;
     }
 
-    else if(compChoice == userChoice.toLowerCase()){
+    else if(compChoice == userChoice){
         console.log("Draw! Try Again")
     }
+
+    return userScore, compScore
 };
+
+const playGame = document.getElementById("playGameBtn");
+playGame.addEventListener('click', game);
