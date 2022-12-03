@@ -1,8 +1,8 @@
 let compNum;
 let compChoice;
 let userChoice;
-let compScore;
-let userScore;
+let compScore = 0;
+let userScore = 0;
 
 const game = () => {
     // userScore = 0;
