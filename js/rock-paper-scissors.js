@@ -5,13 +5,13 @@ let compScore;
 let userScore;
 
 const game = () => {
-    userScore = 0;
-    compScore = 0;
+    // userScore = 0;
+    // compScore = 0;
     
     for(let i = 0; i < 5; i++){
         userChoice = prompt("Choose rock, paper, or scissors:");
-        getComputerChoice()
-        playRound()
+        getComputerChoice();
+        playRound(userChoice, compChoice);
     }
 
     console.log(`Your score: ${userScore}`);
@@ -24,7 +24,7 @@ const game = () => {
     else if(compScore < userScore){
         console.log("You are the winner! Congratulations!")
     }
-}
+};
 
 function getComputerChoice(){
     compNum = Math.random();
@@ -34,11 +34,11 @@ function getComputerChoice(){
     }
 
     else if (compNum >= 0.67){
-        compChoice = 'scissors'
+        compChoice = 'scissors';
     }
 
     else {
-        compChoice = 'paper'
+        compChoice = 'paper';
     }
 
     return compChoice;
@@ -48,37 +48,37 @@ function playRound(userChoice, compChoice){
     // getComputerChoice();
 
     if(compChoice == 'rock' && userChoice == 'scissors'){
-        console.log("Sorry, rock beats scissors!")
+        console.log("Sorry, rock beats scissors!");
         compScore++;
     }
 
     else if(compChoice == 'rock' && userChoice == 'paper'){
-        console.log("Paper covers rock, you win!")
+        console.log("Paper covers rock, you win!");
         userScore++;
     }
 
     else if(compChoice == 'paper' && userChoice == 'rock'){
-        console.log("Sorry, paper covers rock!")
+        console.log("Sorry, paper covers rock!");
         compScore++;
     }
 
     else if(compChoice == 'paper' && userChoice == 'scissors'){
-        console.log("Scissors cut paper, you win!")
+        console.log("Scissors cut paper, you win!");
         userScore++;
     }
 
     else if(compChoice == 'scissors' && userChoice == 'paper'){
-        console.log("Sorry, scissors cut paper!")
+        console.log("Sorry, scissors cut paper!");
         compScore++;
     }
 
     else if(compChoice == 'scissors' && userChoice == 'rock'){
-        console.log("Rock beats scissors, you win!")
+        console.log("Rock beats scissors, you win!");
         userScore++;
     }
 
     else if(compChoice == userChoice){
-        console.log("Draw! Try Again")
+        console.log("Draw! Try Again");
     }
 
     return userScore, compScore
