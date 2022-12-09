@@ -84,5 +84,18 @@ function playRound(userChoice, compChoice){
     return userScore, compScore
 };
 
+const changeUserChoice = (btnChoice) => {
+    userChoice = btnChoice;
+};
+
 const playGame = document.getElementById("playGameBtn");
 playGame.addEventListener('click', game);
+
+const rockBtn = document.getElementById("rockBtn");
+rockBtn.addEventListener('click', changeUserChoice('rock'));
+
+const paperBtn = document.getElementById("paperBtn");
+paperBtn.addEventListener('click', changeUserChoice('paper'));
+
+const scissorsBtn = document.getElementById("scissorsBtn");
+scissorsBtn.addEventListener('click', changeUserChoice('scissors'));
