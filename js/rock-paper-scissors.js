@@ -3,13 +3,20 @@ let compChoice;
 let userChoice;
 let compScore = 0;
 let userScore = 0;
+const textContainer = document.querySelector('.textContainer');
 
 const game = () => {
     // userScore = 0;
     // compScore = 0;
+
+    const userPrompt = document.createElement('div');
+    userPrompt.classList.add('userPrompt');
+    userPrompt.textContent = "Choose rock, paper, or scissors!"
+    textContainer.appendChild(userPrompt);
     
     for(let i = 0; i < 5; i++){
         userChoice = prompt("Choose rock, paper, or scissors:");
+        userChoice = userChoice.toLowerCase();
         getComputerChoice();
         playRound(userChoice, compChoice);
     }
@@ -47,32 +54,32 @@ function getComputerChoice(){
 function playRound(userChoice, compChoice){
     // getComputerChoice();
 
-    if(compChoice == 'rock' && userChoice == 'scissors'){
+    if(compChoice === 'rock' && userChoice === 'scissors'){
         console.log("Sorry, rock beats scissors!");
         compScore++;
     }
 
-    else if(compChoice == 'rock' && userChoice == 'paper'){
+    else if(compChoice === 'rock' && userChoice === 'paper'){
         console.log("Paper covers rock, you win!");
         userScore++;
     }
 
-    else if(compChoice == 'paper' && userChoice == 'rock'){
+    else if(compChoice === 'paper' && userChoice === 'rock'){
         console.log("Sorry, paper covers rock!");
         compScore++;
     }
 
-    else if(compChoice == 'paper' && userChoice == 'scissors'){
+    else if(compChoice === 'paper' && userChoice === 'scissors'){
         console.log("Scissors cut paper, you win!");
         userScore++;
     }
 
-    else if(compChoice == 'scissors' && userChoice == 'paper'){
+    else if(compChoice === 'scissors' && userChoice === 'paper'){
         console.log("Sorry, scissors cut paper!");
         compScore++;
     }
 
-    else if(compChoice == 'scissors' && userChoice == 'rock'){
+    else if(compChoice === 'scissors' && userChoice === 'rock'){
         console.log("Rock beats scissors, you win!");
         userScore++;
     }
@@ -84,18 +91,19 @@ function playRound(userChoice, compChoice){
     return userScore, compScore
 };
 
-const changeUserChoice = (btnChoice) => {
-    userChoice = btnChoice;
-};
+// const changeUserChoice = (btnChoice) => {
+//     userChoice = btnChoice;
+//     return userChoice
+// };
 
 const playGame = document.getElementById("playGameBtn");
 playGame.addEventListener('click', game);
 
 const rockBtn = document.getElementById("rockBtn");
-rockBtn.addEventListener('click', changeUserChoice('rock'));
+// rockBtn.addEventListener('click');
 
 const paperBtn = document.getElementById("paperBtn");
-paperBtn.addEventListener('click', changeUserChoice('paper'));
+// paperBtn.addEventListener('click');
 
 const scissorsBtn = document.getElementById("scissorsBtn");
-scissorsBtn.addEventListener('click', changeUserChoice('scissors'));
+// scissorsBtn.addEventListener('click');
